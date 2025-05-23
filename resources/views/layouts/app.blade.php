@@ -22,8 +22,8 @@
             <div class="h-screen w-52 bg-blue-100 shadow-md">
                 <h1 class="text-center font-bold text-xl my-5">Logo</h1>
                 <div>
-                    <a href="/dashboard" class="block pl-2 py-2  hover:bg-blue-500 hover:text-white border-b border-grey-300">Dashboard</a>
-                    <a href="/categories" class="block pl-2 py-2  hover:bg-blue-500 hover:text-white border-b border-grey-300">Catagories</a>
+                    <a href="{{route('dashboard')}}" class="block pl-2 py-2  hover:bg-blue-500 hover:text-white border-b border-grey-300">Dashboard</a>
+                    <a href="{{route('categories.index')}}" class="block pl-2 py-2  hover:bg-blue-500 hover:text-white border-b border-grey-300">Catagories</a>
                     <a href="" class="block pl-2 py-2  hover:bg-blue-500 hover:text-white border-b border-grey-300">Products</a>
                     <a href="" class="block pl-2 py-2  hover:bg-blue-500 hover:text-white border-b border-grey-300">Orders</a>
                     <a href="" class="block pl-2 py-2  hover:bg-blue-500 hover:text-white border-b border-grey-300">Logout</a>
