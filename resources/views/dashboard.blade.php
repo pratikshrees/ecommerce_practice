@@ -29,7 +29,7 @@
                <i class="ri-menu-line"></i>
                 Total categories
             </h3>
-            <p class="text-4xl text-right font-bold ">10</p>
+            <p class="text-4xl text-right font-bold ">{{$totalcategories}}</p>
         </div>
         <div class="bg-cyan-100 p-4  shadow-md rounded-lg">
             <h3 class="font-bold text-lg">
