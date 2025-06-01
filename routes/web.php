@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Pagescontroller;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,8 @@ Route::post('/categories/store', [CategoryController::class, 'store'])-> name('c
 Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])-> name('categories.edit'); 
 Route::post('/categories/{id}/update', [CategoryController::class, 'update'])-> name('categories.update'); 
 Route::get('/categories/{id}/destroy', [CategoryController::class, 'destroy'])-> name('categories.destroy'); 
+Route::get('/products', [ProductController::class, 'index'])-> name('products.index'); 
+Route::get('/products/create', [ProductController::class, 'create'])-> name('products.create'); 
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

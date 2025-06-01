@@ -25,7 +25,7 @@
                 <div>
                     <a href="{{route('dashboard')}}" class="block pl-2 py-2  hover:bg-blue-500 hover:text-white border-b border-grey-300">Dashboard</a>
                     <a href="{{route('categories.index')}}" class="block pl-2 py-2  hover:bg-blue-500 hover:text-white border-b border-grey-300">Catagories</a>
-                    <a href="" class="block pl-2 py-2  hover:bg-blue-500 hover:text-white border-b border-grey-300">Products</a>
+                    <a href="{{route('products.index')}}" class="block pl-2 py-2  hover:bg-blue-500 hover:text-white border-b border-grey-300">Products</a>
                     <a href="" class="block pl-2 py-2  hover:bg-blue-500 hover:text-white border-b border-grey-300">Orders</a>
                     <a href="" class="block pl-2 py-2  hover:bg-blue-500 hover:text-white border-b border-grey-300">Logout</a>
                 </div>
