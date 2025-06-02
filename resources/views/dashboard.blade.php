@@ -36,7 +36,7 @@
                 <i class="ri-shopping-cart-fill"></i>
                 Total Products  
             </h3>
-            <p class="text-4xl text-right font-bold ">80</p>
+            <p class="text-4xl text-right font-bold ">{{$totalproducts}}</p>
         </div>
         <div class="bg-yellow-100 p-4  shadow-md rounded-lg">
             <h3 class="font-bold text-lg">

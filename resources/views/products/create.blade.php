@@ -20,7 +20,7 @@
         @error('discounted_price')
             <div class="text-red-500 mb-3 -mt-3">{{$message}}</div>
         @enderror
-        <textarea class="border border-gray-300 p-2 rounded-md w-full mb-3" name="description" placeholder="Description">{{old('description')}}</textarea>
+        <textarea class="border border-gray-300 p-2 rounded-md w-full mb-3" name="description" placeholder="Description">{{old('description')}}></textarea>
         @error('description')
             <div class="text-red-500 mb-3 -mt-3">{{$message}}</div>
         @enderror
