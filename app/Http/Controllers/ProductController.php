@@ -40,6 +40,9 @@ class ProductController extends Controller
     return redirect()->route('products.index')->with('success', 'Product created successfully!');
 
     }
+
+
+
     public function edit($id){
         $categories= Category::orderBy('order','asc')->get();
         $product= Product::find($id);

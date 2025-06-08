@@ -17,13 +17,15 @@
         </tr>
        @foreach($products as $product)
         <tr class="text-center">
-            <th class="p-2 border border-grey-50">{{$product->photopath}}</th>
+            <th class="p-2 border border-grey-50">
+                <img src="{{asset($product->photopath)}}" alt="" class="h-20 w-40">
+            </th>
             <th class="p-2 border border-grey-50">{{$product->name}}</th>
             <th class="p-2 border border-grey-50">{{$product->price}}</th>
-            <th class="p-2 border border-grey-50">{{$product->discounted_price}}</th>
+            <th class="p-2 border border-grey-50">{{$product->discounted_price ?? '--'}}</th>
             <th class="p-2 border border-grey-50">{{$product->description}}</th>
             <th class="p-2 border border-grey-50">{{$product->stock}}</th>
-            <th class="p-2 border border-grey-50">{{$product->category_id}}</th>
+            <th class="p-2 border border-grey-50">{{$product->category->name}}</th>
             <th class="p-2 border border-grey-50">
                 <a href="{{route('products.edit', $product->id)}}" class="bg-blue-500 text-white px-2 py-1 rounded-md">Edit</a>
                 <a href="{{route('products.destroy', $product->id)}}" onclick="return confirm('Are you sure to delete ?');" class="bg-red-500 text-white px-2 py-1 rounded-md">Delete</a>
