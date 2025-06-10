@@ -6,7 +6,7 @@
     @csrf
     <select name="category_id" id="" class="border border-gray-300 p-2 rounded-md w-full mb-3">
             @foreach($categories as $category)
-            <option value="{{$category->id}}">{{$category->name}}</option>
+        <option value="{{$category->id}}" @if ($product->category_id==$category->id) selected @endif>{{$category->name}}</option>
             @endforeach
         </select>
         <input type="text" class="border border-gray-300 p-2 rounded-md w-full mb-3" name="name" placeholder="Product Name" value="{{$product->name}}" >
@@ -29,6 +29,8 @@
         @error('stock')
             <div class="text-red-500 mb-3 -mt-3">{{$message}}</div>
         @enderror
+        <p>Current picture:</p>
+        <img src="{{asset($product->photopath)}}" alt="Product Images" class="h-20 w-20">
         <input type="file" class="border border-gray-300 p-2 rounded-md w-full mb-3" name="photopath" accept="image/*" value="{{$product->photopath}}" >
         @error('photopath')
             <div class="text-red-500 mb-3 -mt-3">{{$message}}</div>
