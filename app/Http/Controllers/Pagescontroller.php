@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class Pagescontroller extends Controller
 {
     public function home(){
-        $name= "Pratik Shrees";
-        return view('welcome',compact('name'));
+        $latestproduct= Product::latest()->take(4)->get();
+        return view('welcome',compact('latestproduct'));
     }
     public function about(){
         return view('about');

@@ -22,7 +22,7 @@ class ProductController extends Controller
         'name'             => 'required|string|max:255',
         'price'            => 'required|numeric|min:0',
         'description'      => 'required|string',
-        'discounted_price' => 'nullable|numeric|min:0',
+        'discounted_price' => 'nullable|numeric|lt:price',
         'stock'            => 'required|integer|min:0',
         'category_id'      => 'required|exists:categories,id',
         'photopath'        => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -53,17 +53,33 @@ class ProductController extends Controller
         'name'             => 'required|string|max:255',
         'price'            => 'required|numeric|min:0',
         'description'      => 'required|string',
-        'discounted_price' => 'nullable|numeric|min:0',
+        'discounted_price' => 'nullable|numeric|lt:price',
         'stock'            => 'required|integer|min:0',
         'category_id'      => 'required|exists:categories,id',
         'photopath'        => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
     ]);
         $product= Product::find($id);
+
+        if ($request->hasFile('photopath')) {
+        $file = $request->file('photopath');
+        $filename = time() . '_' . $file->getClientOriginalName();
+        $file->move(public_path('images/products'), $filename);
+        $data['photopath'] = 'images/products/' . $filename;
+
+        if(file_exists(public_path('images/products/'.$product->photopath))){
+            unlink(public_path('images/products/'.$product->photopath));
+        }
+        }
+
+
         $product-> update($data);
         return redirect()->route('products.index')->with('success','Product Updated Succesfully');
     }
     public function destroy($id){
         $product= Product::find($id) ->delete();
+        if(file_exists(public_path('images/products/'.$product->photopath))){
+            unlink(public_path('images/products/'.$product->photopath));
+        }
        return redirect()->route('products.index')->with('success','Product Deleted Succesfully');
     }
 }
