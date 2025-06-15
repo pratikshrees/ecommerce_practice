@@ -11,6 +11,10 @@ class Pagescontroller extends Controller
         $latestproduct= Product::latest()->take(4)->get();
         return view('welcome',compact('latestproduct'));
     }
+    public function viewproduct($id){
+        $product= Product::FindOrFail($id);
+        return view('viewproduct',compact('product'));
+    }
     public function about(){
         return view('about');
     }

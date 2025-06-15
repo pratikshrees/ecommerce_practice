@@ -23,6 +23,7 @@
           @foreach ($categories as $category)
             <a href="" class="text-gray-700 hover:text-blue-600">{{$category->name}}</a>
           @endforeach
+          <a href="/login">Login</a>
         </div>
       </div>
     </div>
